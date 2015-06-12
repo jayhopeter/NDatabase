@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D8C4A93-468D-4CB6-9359-B5DEE09C4ABC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>NDatabase.Old.UnitTests</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ndatabase.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External-Lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Function.cs" />
+    <Compile Include="NDatabase\Odb\Test\Acid\TestConsistency.cs" />
+    <Compile Include="NDatabase\Odb\Test\Acid\TestStopEngineWithoutCommit.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\ClassWithNonGenericMap.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\MyList.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\MyObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\ObjectWithListOfInteger.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\ObjectWithNativeArrayOfBigDecimal.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\ObjectWithNativeArrayOfDate.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\ObjectWithNativeArrayOfInt.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\ObjectWithNativeArrayOfShort.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\TestArray.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\TestList.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\TestMap.cs" />
+    <Compile Include="NDatabase\Odb\Test\Arraycollectionmap\TestMapContainingCollection.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\BigBTree.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\MultipleKeyBTree.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\SingleValueBTree.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\TestBTreeInsertAndSearch.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\TestLazyBTree.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\TestNativeBTree.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\TestODBLazyBTree.cs" />
+    <Compile Include="NDatabase\Odb\Test\Btree\Odb\TestPersister.cs" />
+    <Compile Include="NDatabase\Odb\Test\Buffer\TestBigData.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cache\MyObjectWithMyHashCode.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cache\MyObjectWithMyHashCode2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cache\TestCache.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cache\TestHashCode.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cache\TestInsertingObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Commit\TestCommit.cs" />
+    <Compile Include="NDatabase\Odb\Test\Conversion\TestNumberConversion.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cyclic\ClassA.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cyclic\ClassB.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cyclic\TestCyclicReference.cs" />
+    <Compile Include="NDatabase\Odb\Test\Cyclic\TestCyclicReference2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Defragment\TestDefragment.cs" />
+    <Compile Include="NDatabase\Odb\Test\Delete\TestDelete.cs" />
+    <Compile Include="NDatabase\Odb\Test\Delete\TestDelete2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Encoding\TestEncoding.cs" />
+    <Compile Include="NDatabase\Odb\Test\Enum\ClassWithEnum.cs" />
+    <Compile Include="NDatabase\Odb\Test\Enum\TestEnum.cs" />
+    <Compile Include="NDatabase\Odb\Test\Error\TestError.cs" />
+    <Compile Include="NDatabase\Odb\Test\Explorer\CreateDataToTestOdbExplorer.cs" />
+    <Compile Include="NDatabase\Odb\Test\Ext\TestExt.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\IndexedObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\IndexedObject2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\IndexedObject3.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\TestCreateObjectAfterInsert.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\TestIndex.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\TestIndex2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\TestIndexesWithValueQueries.cs" />
+    <Compile Include="NDatabase\Odb\Test\Index\TestIndexingByObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Inheritance\Class1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Inheritance\Class2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Inheritance\Class3.cs" />
+    <Compile Include="NDatabase\Odb\Test\Inheritance\IInterface.cs" />
+    <Compile Include="NDatabase\Odb\Test\Inheritance\SubClassOfClass1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Inheritance\TestInheritance.cs" />
+    <Compile Include="NDatabase\Odb\Test\Insert\StorageEngineTest.cs" />
+    <Compile Include="NDatabase\Odb\Test\Insert\TestInsert.cs" />
+    <Compile Include="NDatabase\Odb\Test\Insert\TestDotNetObjects.cs" />
+    <Compile Include="NDatabase\Odb\Test\Instantiationhelper\Car.cs" />
+    <Compile Include="NDatabase\Odb\Test\Instantiationhelper\TestInstanceHelper.cs" />
+    <Compile Include="NDatabase\Odb\Test\Instantiationhelper\When_creating_object_without_invocation_of_constructor.cs" />
+    <Compile Include="NDatabase\Odb\Test\Interfaces\TestObjectWithInterfaces.cs" />
+    <Compile Include="NDatabase\Odb\Test\Intropector\Class1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Intropector\Class2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Intropector\Class3.cs" />
+    <Compile Include="NDatabase\Odb\Test\Intropector\InstrospectorTest.cs" />
+    <Compile Include="NDatabase\Odb\Test\Intropector\IntrospectorWithNestedClasses.cs" />
+    <Compile Include="NDatabase\Odb\Test\Intropector\TestArray.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\MockFileIdentification.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\MockObjectReader.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\MockSession.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\TestBigFile.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\TestFileSystemInterface1.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\TestFileSystemInterface2.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\TestReservingSpace.cs" />
+    <Compile Include="NDatabase\Odb\Test\IO\TestUseAfterClose.cs" />
+    <Compile Include="NDatabase\Odb\Test\Jdk15\Generics\TestGenerics.cs" />
+    <Compile Include="NDatabase\Odb\Test\List\MyInt.cs" />
+    <Compile Include="NDatabase\Odb\Test\List\MyLong.cs" />
+    <Compile Include="NDatabase\Odb\Test\List\TestFieldComparatorSort.cs" />
+    <Compile Include="NDatabase\Odb\Test\List\Update\DadosUsuario.cs" />
+    <Compile Include="NDatabase\Odb\Test\List\Update\Publicacao.cs" />
+    <Compile Include="NDatabase\Odb\Test\List\Update\TestUpdateList.cs" />
+    <Compile Include="NDatabase\Odb\Test\List\User.cs" />
+    <Compile Include="NDatabase\Odb\Test\Nativemap\NativeLongMap.cs" />
+    <Compile Include="NDatabase\Odb\Test\NDatabaseAssert.cs" />
+    <Compile Include="NDatabase\Odb\Test\Newbie\CreateDataBaseTest.cs" />
+    <Compile Include="NDatabase\Odb\Test\Newbie\InsertTest.cs" />
+    <Compile Include="NDatabase\Odb\Test\Newbie\UpdateTest.cs" />
+    <Compile Include="NDatabase\Odb\Test\Newbie\VO\Car.cs" />
+    <Compile Include="NDatabase\Odb\Test\Newbie\VO\Driver.cs" />
+    <Compile Include="NDatabase\Odb\Test\Nullobject\GenericClass.cs" />
+    <Compile Include="NDatabase\Odb\Test\Nullobject\TestNullObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\ODBTest.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\A.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\AllIDs.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\B.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\ClassWithOid.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\TestGetObjectByOid.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\TestOid.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\TestOidAsNativeObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Oid\TestStoreWithOID.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\ObjectWithOid.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\Person1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\Student1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\Test2Closes.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\TestAgainstNativeObjects.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\TestDownloadManager.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\TestGetDatabaseName.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\TestExceptionClassPersistence.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\TestObjectWithOid.cs" />
+    <Compile Include="NDatabase\Odb\Test\Other\TestShutdownHook.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\Class1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\PerformanceTest1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\PerformanceTest1OnlySelect.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\PerformanceTest1WithIndex.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\PerformanceTest2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\SimpleObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestArrayCopy.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestArrayList_vs_array.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestBatchInsert.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestByteConversion.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestComparisonDotNet.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestFilePersisterHighPerformance2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestGetWithStartIndex.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestLazy.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestMapPerf.cs" />
+    <Compile Include="NDatabase\Odb\Test\Performance\TestWeakReference.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\Class1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\Class2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\ClassB.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\ClassWithInt.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\ClassWithListOfString.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\ClassWithLong.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\MyDates.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestCriteriaQuery.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestCriteriaQuery2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestCriteriaQuery3.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestCriteriaQuery4.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestCriteriaQuery5.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestCriteriaQuery6.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestIndexFromTo.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestPolyMorphic.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestQueryOrderBy.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Criteria\TestRelation.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\Handler.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\Parameter.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\TestGetValues.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\TestGetValuesGroupBy.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\TestGetValuesHandlerParameter.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\TestPerfObjectValuesVsCriteriaQuery.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\TestPerfObjectValuesVsCriteriaQueryWithIndexes.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\TestSubList.cs" />
+    <Compile Include="NDatabase\Odb\Test\Query\Values\TestValuesQueryWithOid.cs" />
+    <Compile Include="NDatabase\Odb\Test\Resistance\TestResistance.cs" />
+    <Compile Include="NDatabase\Odb\Test\Resistance\TestResistance1.cs" />
+    <Compile Include="NDatabase\Odb\Test\Rollback\TestRollBack.cs" />
+    <Compile Include="NDatabase\Odb\Test\School\TestQuerySchool.cs" />
+    <Compile Include="NDatabase\Odb\Test\Session\TestSession.cs" />
+    <Compile Include="NDatabase\Odb\Test\TestTypeConverter.cs" />
+    <Compile Include="NDatabase\Odb\Test\Tools\TestString.cs" />
+    <Compile Include="NDatabase\Odb\Test\Transaction\TestInTransaction.cs" />
+    <Compile Include="NDatabase\Odb\Test\Transient_attributes\TestTransient.cs" />
+    <Compile Include="NDatabase\Odb\Test\Transient_attributes\VoWithTransientAttribute.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\ID.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\LocalAutoIncrementTrigger.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\MySelectTrigger.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\MyTrigger.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\MyTriggerBefore.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\MyUpdateTriggerBefore.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\ObjectWithAutoIncrementId.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\SimpleObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\TestAutoIncrementTrigger.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\TestTrigger.cs" />
+    <Compile Include="NDatabase\Odb\Test\Trigger\TestTriggerBefore.cs" />
+    <Compile Include="NDatabase\Odb\Test\Tutorial\Game.cs" />
+    <Compile Include="NDatabase\Odb\Test\Tutorial\Player.cs" />
+    <Compile Include="NDatabase\Odb\Test\Tutorial\Sport.cs" />
+    <Compile Include="NDatabase\Odb\Test\Tutorial\Team.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\MyObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\AT.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\Constructor.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\Device.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\Functions.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\Meteo.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\PMV.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\Profile.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\SensorAT.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\SensorMeteo.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\TestNullObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\Nullobject\User.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\TestUpdate2.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\TestSimpleUpdateObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\TestUnconnectedZone.cs" />
+    <Compile Include="NDatabase\Odb\Test\Update\TestUpdate.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Arraycollectionmap\Catalog\Catalog.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Arraycollectionmap\Catalog\Product.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Arraycollectionmap\Catalog\ProductCategory.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Arraycollectionmap\Dictionnary.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Arraycollectionmap\PlayerWithArray.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Arraycollectionmap\PlayerWithList.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Attribute\ObjectWithDates.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Attribute\TestClass.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\ClassWithArrayOfBoolean.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Country\City.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Country\Country.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Country\Country2.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Crawler\Jdk5\Metadata.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Crawler\Jdk5\OutputLink.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Crawler\Jdk5\Page.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Crawler\Jdk5\SearchElement.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Download\Download.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Download\User.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Human\Animal.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Human\Human.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Human\Man.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Human\Woman.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Inheritance\FootballPlayer.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Inheritance\OutdoorPlayer.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Inheritance\Player.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Interfaces\MyObject.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Interfaces\ObjectWithInterfaces.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Login\Function.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Login\Profile.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Login\User.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Login\User2.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\School\Course.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\School\Discipline.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\School\History.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\School\Student.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\School\Teacher.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Sport\Game.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Sport\Player.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Sport\Sport.cs" />
+    <Compile Include="NDatabase\Odb\Test\VO\Sport\Team.cs" />
+    <Compile Include="NDatabase\Test\Btree\Impl\Singlevalue\TestBTreeSingleValue.cs" />
+    <Compile Include="NDatabase\Tool\BTreeDisplay.cs" />
+    <Compile Include="NDatabase\Tool\StopWatch.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\NDatabase.csproj">
+      <Project>{4B6993D5-995D-4AAA-BBCE-423D1B5451F6}</Project>
+      <Name>NDatabase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NDatabase\Odb\Test\Arraycollectionmap\ObjectWith2DimensionsArrayOfInteger.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ndatabase.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo POSTBUILDSTEP for $(ProjectName)
+ 
+xcopy "$(TargetPath)" "$(SolutionDir)UnitTests" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)UnitTests" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ 
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+goto BuildEventOK
+:BuildEventFailed
+echo POSTBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="NDatabase.Sample.WCF.TodoListApp.TodoService" CodeBehind="TodoService.svc.cs" %>

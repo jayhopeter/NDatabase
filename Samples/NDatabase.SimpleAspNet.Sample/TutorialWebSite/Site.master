@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>NDatabase Tutorial</title>
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <ul id="menu">
+        <li><a href="Default.aspx">Home</a></li>
+        <li><a href="Employees.aspx">Employees</a></li>
+        <li><a href="AddEmployee.aspx">Add Employee</a></li>
+        <li><a href="DeleteEmployee.aspx">Delete Employee</a></li>
+        <li><a href="About.aspx">About</a></li>
+    </ul>
+    <div id="main">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        <p>
+            NDatabase &copy;
+            <%=DateTime.Now.Year%>. All rights reserved.</p>
+    </div>
+    </form>
+</body>
+</html>

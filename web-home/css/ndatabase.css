@@ -1,0 +1,54 @@
+.center {
+    text-align: center;
+}
+
+.hero-unit .btn-large {
+    font-size: 22px;
+    font-family: Helvetica,sans-serif;
+    font-weight: lighter;
+}
+
+.hero-unit h1 {
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    margin: 0;
+    font-size: 30px;
+    color: #535353;
+    font-family: 'helvetica neue', Helvetica, Arial, serif;
+    font-weight: 300;
+}
+
+.spacer {
+    display: inline-block;
+    width: 5em;
+    height: 2.5em;
+}
+
+.quick-links {
+    text-align: center;
+    list-style: none;
+    margin-top: 50px;
+}
+
+.navbar .nav > li > a {
+    padding: 10px 23px 11px 20px;
+}
+
+.navbar .divider-vertical {
+    margin: 0;
+}
+
+.footer {
+    padding-top: 2em;
+    background-color: #333333;
+    color: white;
+    padding-bottom: 2em;
+}
+
+.example {
+    margin-top: 1em;
+}
+
+.app-source {
+    min-height: 375px;
+}

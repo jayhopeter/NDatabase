@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A12A273-4159-489D-8A77-3C5AB22860E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NDatabase.UnitTests</RootNamespace>
+    <AssemblyName>NDatabase.UnitTests</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ndatabase.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\External-Lib\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External-Lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\When_we_use_storage_positions.cs" />
+    <Compile Include="Base\When_we_store_nullable_types.cs" />
+    <Compile Include="Bugs\Compability\When_storing_the_same_class_with_different_versions.cs" />
+    <Compile Include="Bugs\Index\When_we_use_index_on_invariant_equal_criteria.cs" />
+    <Compile Include="Bugs\When_storing_bitmap.cs" />
+    <Compile Include="Bugs\When_storing_class_which_has_reference_to_itself.cs" />
+    <Compile Include="Bugs\When_storing_null_references.cs" />
+    <Compile Include="Bugs\When_storing_unsigned_int_long_short_or_signed_byte.cs" />
+    <Compile Include="Bugs\When_we_are_using_indexes_in_linq_query.cs" />
+    <Compile Include="Bugs\When_we_want_to_store_generic_types.cs" />
+    <Compile Include="Class_names.cs" />
+    <Compile Include="CodeSnippets\Data\Game.cs" />
+    <Compile Include="CodeSnippets\Data\IHero.cs" />
+    <Compile Include="CodeSnippets\Data\Mage.cs" />
+    <Compile Include="CodeSnippets\Data\Player.cs" />
+    <Compile Include="CodeSnippets\Data\Team.cs" />
+    <Compile Include="CodeSnippets\Data\Warrior.cs" />
+    <Compile Include="CodeSnippets\Documentation_1_minute_tutorial.cs" />
+    <Compile Include="CodeSnippets\Documentation_5_minutes_tutorial.cs" />
+    <Compile Include="CodeSnippets\Documentation_indexes.cs" />
+    <Compile Include="CodeSnippets\Documentation_triggers.cs" />
+    <Compile Include="CodeSnippets\Home_persist_and_retrieve_the_object.cs" />
+    <Compile Include="CodeSnippets\Data\Sport.cs" />
+    <Compile Include="Container\When_we_use_internal_dependency_container.cs" />
+    <Compile Include="InstanceSpecification.cs" />
+    <Compile Include="Layer1\When_we_use_class_introspector.cs" />
+    <Compile Include="Layer2\When_we_use_class_info.cs" />
+    <Compile Include="Layer2\When_we_use_class_info_zone_info.cs" />
+    <Compile Include="Layer2\When_we_use_existing_odb_types.cs" />
+    <Compile Include="Layer3\When_we_use_byte_array_converter.cs" />
+    <Compile Include="Layer3\When_we_use_odb_cache.cs" />
+    <Compile Include="Layer3\When_we_use_multi_buffered_file_io.cs" />
+    <Compile Include="Layer3\When_we_use_multi_buffered_file_io_with_turned_off_buffer.cs" />
+    <Compile Include="Layer3\When_we_use_multi_buffer_vo.cs" />
+    <Compile Include="Layer3\When_we_use_file_identification_as_db_identification.cs" />
+    <Compile Include="Layer3\When_we_use_odb_directory.cs" />
+    <Compile Include="Layer3\When_we_use_odb_file_stream.cs" />
+    <Compile Include="Layer3\When_we_use_read_objects_cache.cs" />
+    <Compile Include="MemoryMonitor.cs" />
+    <Compile Include="Metadata\When_we_are_inspecting_array.cs" />
+    <Compile Include="Metadata\When_we_are_inspecting_enum.cs" />
+    <Compile Include="Metadata\When_we_are_inspecting_null.cs" />
+    <Compile Include="Metadata\When_we_are_using_meta_model.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Refactor\TypeToRefactor.cs" />
+    <Compile Include="Refactor\When_we_are_using_refactor_manager_to_add_field.cs" />
+    <Compile Include="Refactor\When_we_are_using_refactor_manager_to_remove_field.cs" />
+    <Compile Include="Refactor\When_we_are_using_refactor_manager_to_rename_class.cs" />
+    <Compile Include="Refactor\When_we_are_using_refactor_manager_to_rename_field.cs" />
+    <Compile Include="Serialization\Identification\When_we_are_using_database_id.cs" />
+    <Compile Include="Serialization\Identification\When_we_are_using_db_class_oid.cs" />
+    <Compile Include="Serialization\Identification\When_we_are_using_db_object_oid.cs" />
+    <Compile Include="TestData\Person.cs" />
+    <Compile Include="Base\When_we_want_store_simple_object.cs" />
+    <Compile Include="Transaction\When_we_use_write_action_to_save_data.cs" />
+    <Compile Include="Triggers\Internal_trigger_manager_test_case.cs" />
+    <Compile Include="Triggers\Triggers_test_case.cs" />
+    <Compile Include="Triggers\When_we_use_object_representation_as_the_wrapper_for_nnoi.cs" />
+    <Compile Include="TypeResolution\TestGenericObject.cs" />
+    <Compile Include="TypeResolution\TypeResolution_TestCase.cs" />
+    <Compile Include="Utils\Logging_test_case.cs" />
+    <Compile Include="Utils\Test_list_extensions.cs" />
+    <Compile Include="Utils\Test_order_by_constants.cs" />
+    <Compile Include="Utils\When_working_with_class_utils.cs" />
+    <Compile Include="Utils\When_working_with_string_utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\NDatabase.csproj">
+      <Project>{4B6993D5-995D-4AAA-BBCE-423D1B5451F6}</Project>
+      <Name>NDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\tools\NDatabase.Northwind.Domain\NDatabase.Northwind.Domain.csproj">
+      <Project>{E58257BE-7CF9-4471-9E5E-99510FF70637}</Project>
+      <Name>NDatabase.Northwind.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ndatabase.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="product_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo POSTBUILDSTEP for $(ProjectName)
+ 
+xcopy "$(TargetPath)" "$(SolutionDir)UnitTests" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)UnitTests" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ 
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+goto BuildEventOK
+:BuildEventFailed
+echo POSTBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

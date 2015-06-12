@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8BCB6680-9336-43FE-BF73-A4BE7BFE3264}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NDatabase.Client.UnitTests</RootNamespace>
+    <AssemblyName>NDatabase.Client.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External-Lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Heroes\IHero.cs" />
+    <Compile Include="Data\Heroes\Warrior.cs" />
+    <Compile Include="Data\Items\Field.cs" />
+    <Compile Include="Data\Items\IArmor.cs" />
+    <Compile Include="Data\Items\IItem.cs" />
+    <Compile Include="Data\Items\IWeapon.cs" />
+    <Compile Include="Data\Items\NoItem.cs" />
+    <Compile Include="Data\Items\Sword.cs" />
+    <Compile Include="Data\SimpleClass.cs" />
+    <Compile Include="Indexes\Indexes_TestCase.cs" />
+    <Compile Include="InMemory\When_we_use_ndatabase_as_in_memory_db.cs" />
+    <Compile Include="Misc\Add_again_retrieved_object.cs" />
+    <Compile Include="Misc\TestCase_CascadeDelete.cs" />
+    <Compile Include="Misc\TestCase_OdbConfiguration.cs" />
+    <Compile Include="OID\TestCase_EnrichingClassWithOid.cs" />
+    <Compile Include="Paging\Paging_TestCase.cs" />
+    <Compile Include="Queries\Soda\Building_soda_queries_doc.cs" />
+    <Compile Include="Queries\Values\TestCase_working_with_values_query.cs" />
+    <Compile Include="Transactions\Transactions_TestCase.cs" />
+    <Compile Include="Types\When_we_store_array.cs" />
+    <Compile Include="Types\When_we_store_type_with_event_or_delagete.cs" />
+    <Compile Include="Types\When_we_want_to_serialize_collections.cs" />
+    <Compile Include="Types\When_we_want_to_store_dynamic_instance.cs" />
+    <Compile Include="Data\Address.cs" />
+    <Compile Include="Data\City.cs" />
+    <Compile Include="TestCase_working_with_linq.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="TypedDataContextSample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\NDatabase.csproj">
+      <Project>{4B6993D5-995D-4AAA-BBCE-423D1B5451F6}</Project>
+      <Name>NDatabase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo POSTBUILDSTEP for $(ProjectName)
+ 
+xcopy "$(TargetPath)" "$(SolutionDir)UnitTests" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+xcopy "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)UnitTests" /i /d /y
+if errorlevel 1 goto BuildEventFailed
+ 
+REM Exit properly because the build will not fail 
+REM unless the final step exits with an error code
+goto BuildEventOK
+:BuildEventFailed
+echo POSTBUILDSTEP for $(ProjectName) FAILED
+exit 1
+:BuildEventOK
+echo POSTBUILDSTEP for $(ProjectName) COMPLETED OK</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

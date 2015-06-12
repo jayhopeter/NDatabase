@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NDatabase - C# Lightweight Object Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C# Lightweight Object Database">
+    <meta name="author" content="Jacek Spolnik">
+    <meta charset="utf-8">
+    <link rel="icon" href="img/favicon.ico">
+    <!--[if lte IE 8]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/ndatabase.css">
+    <!-- scripts -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://google-code-prettify.googlecode.com/svn/loader//run_prettify.js?lang=pascal"></script>
+</head>
+<body>
+<header class="header">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="http://ndatabase.net">NDatabase</a>
+
+                <div class="nav">
+                    <ul class="nav">
+                        <li class="divider-vertical"></li>
+                        <li class="active"><a href="http://ndatabase.net"><i class="icon-home icon-white"></i> Home</a>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="http://docs.ndatabase.net"><i class="icon-eye-open icon-white"></i> Learn</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="http://ndatabase.codeplex.com/discussions"><i class="icon-comment icon-white"></i>
+                            Discuss</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="http://ndatabase.codeplex.com/workitem/list/basic"><i
+                                class="icon-lightbulb icon-white"></i> Issue Tracker</a></li>
+                        <li class="divider-vertical"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div role="main" class="container">
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="row" style="padding-top: 80px;">
+        <div class="span12">
+            <div class="hero-unit" style="height: 300px;">
+                <div class="center">
+                    <img src="img/web-logo.png">
+                </div>
+                <div class="center">
+                    <h1>Persistence enhanced for C# apps!</h1>
+                </div>
+                <div class="center">
+                    <a class="btn btn-large" href="http://ndatabase.codeplex.com">
+                        <i class="icon-th-large"></i> View on CodePlex
+                    </a>
+                    <span class="spacer"></span>
+
+                    <a class="btn btn-large btn-primary" href="http://ndatabase.codeplex.com/releases/view/102824">
+                        <i class="icon-download-alt icon-large"></i> Download
+                        <span class="version"> (<span>3.5.0</span>) </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row first">
+        <div class="span4">
+            <h2>Why NDatabase</h2>
+
+            <p>NDatabase is a simple .Net Object Database. To avoid impedance mismatch overhead between Object and
+                Relational worlds, give a try to NDatabase. NDatabase is a new generation Object Database: a real
+                native and transparent persistence layer for .Net. </p>
+
+            <p><a class="btn" href="http://docs.ndatabase.net/index.html?why_ndatabase_.html">View details >></a></p>
+        </div>
+        <div class="span4">
+            <h2>Safe and Robust</h2>
+
+            <p>NDatabase supports ACID transactions to guarantee data integrity of the database. All committed work will
+                be applied to the database even in case of hardware failure. This is done by automatic transaction
+                recovery on the next startup. </p>
+
+            <p><a class="btn" href="http://docs.ndatabase.net/index.html?features.html">View more >></a></p>
+        </div>
+        <div class="span4">
+            <h2>Productivity</h2>
+
+            <p>NDatabase lets you persist data with a very few lines of code. There is no need to modify the classes
+                that must be persisted and no mapping is needed. So developers can concentrate on business logic
+                implementation instead of wasting time with the persistence layer..</p>
+
+            <p><a class="btn" href="http://docs.ndatabase.net/index.html?features.html">View more >></a></p>
+        </div>
+        <div class="spacer"></div>
+    </div>
+    <h1 id="the-basics">The Basics</h1>
+
+    <div class="row">
+        <div class="span8">
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#create-cs" data-toggle="tab">Create.cs</a>
+                    </li>
+                    <li>
+                        <a href="#read-cs" data-toggle="tab">Read.cs</a>
+                    </li>
+                    <li>
+                        <a href="#update-cs" data-toggle="tab">Update.cs</a>
+                    </li>
+                    <li>
+                        <a href="#delete-cs" data-toggle="tab">Delete.cs</a>
+                    </li>
+                    <li>
+                        <a href="#sport-cs" data-toggle="tab">Sport.cs</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="create-cs">
+                        <pre class="prettyprint">
+// Create the instance be stored
+var sport = new Sport("volley-ball");
+
+// Open the database
+using (var odb = OdbFactory.Open(DbName))
+{
+    // Store the object
+    odb.Store(sport);
+}
+                        </pre>
+                    </div>
+                    <div class="tab-pane" id="read-cs">
+                        <pre class="prettyprint">
+// Open the database
+using (var odb = OdbFactory.Open(DbName))
+{
+    var sports = odb.QueryAndExecute&lt;Sport&gt;();
+
+    Assert.That(sports, Has.Count.EqualTo(1));
+}
+                        </pre>
+                    </div>
+                    <div class="tab-pane" id="update-cs">
+                        <pre class="prettyprint">
+// Open the database
+using (var odb = OdbFactory.Open(DbName))
+{
+    var firstSport = odb.QueryAndExecute&lt;Sport&gt;().GetFirst();
+
+    firstSport.Name = "new name";
+    odb.Store(firstSport);
+}
+                        </pre>
+                    </div>
+                    <div class="tab-pane" id="delete-cs">
+                        <pre class="prettyprint">
+//Open the database
+using (var odb = OdbFactory.Open(DbName))
+{
+    var first = odb.QueryAndExecute&lt;Sport&gt;().GetFirst();
+    odb.Delete(first);
+}
+
+// Open the database
+using (var odb = OdbFactory.Open(DbName))
+{
+    var sports = odb.QueryAndExecute&lt;Sport&gt;();
+
+    Assert.That(sports, Has.Count.EqualTo(0));
+}
+                        </pre>
+                    </div>
+                    <div class="tab-pane" id="sport-cs">
+                        <pre class="prettyprint">
+public sealed class Sport
+{
+    private string _name;
+
+    public Sport(string name)
+	{
+		_name = name;
+	}
+
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
+    public override string ToString() { return Name; }
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spacer"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-right">
+            <a href="#" target="_self">Back to top</a>
+        </p>
+
+        <p>Powered by NDatabase &copy;2012-2013</p>
+
+        <p>Code licensed under the
+            <a href="http://ndatabase.codeplex.com/license" target="_blank">The
+                LGPL License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC
+                BY 3.0</a>.
+        </p>
+    </div>
+</footer>
+</body>
+</html>
